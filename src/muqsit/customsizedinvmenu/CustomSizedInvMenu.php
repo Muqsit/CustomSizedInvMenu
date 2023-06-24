@@ -53,7 +53,7 @@ final class CustomSizedInvMenu extends PluginBase{
 		$id_list->push(CompoundTag::create()
 			->setString("bid", "")
 			->setByte("hasspawnegg", 0)
-			->setString("id", "inventoryui:inventoryui")
+			->setString("id", CustomSizedInvMenuType::ACTOR_NETWORK_ID)
 			->setByte("summonable", 0)
 		);
 	}
