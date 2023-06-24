@@ -1,0 +1,15 @@
+name: CustomSizedInvMenu
+main: muqsit\customsizedinvmenu\CustomSizedInvMenu
+api: 5.0.0
+version: 0.0.1
+
+commands:
+  cinvmenu:
+    usage: /cinvmenu <numSlots> [title]
+    description: Opens a custom-sized inventory menu
+    permission: customsizedinvmenu.command
+
+permissions:
+  customsizedinvmenu.command:
+    description: Allows using the /cinvmenu command
+    default: true
