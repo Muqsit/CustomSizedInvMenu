@@ -1,0 +1,12 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Muqsit/CustomSizedInvMenu
+build-by-default: true
+branches:
+- master
+projects:
+  CustomSizedInvMenu:
+    path: ""
+    libs:
+      - src: muqsit/InvMenu/InvMenu
+        branch: pm5
+        version: ^4.6.1
+...
