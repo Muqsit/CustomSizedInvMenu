@@ -11,7 +11,7 @@ $menu->send($player);
 ```
 
 ### Example Command Usage
-Run `/cinvmenu <numSlots> [title]` to open an InvMneu of `numSlots` number of slots:
+Run `/cinvmenu <numSlots> [title]` to open an InvMenu of `numSlots` number of slots:
 - `/cinvmenu 36 "36-slot Inventory"`
 
   ![image](https://github.com/Muqsit/CustomSizedInvMenu/assets/15074389/721ee351-3247-4b37-8a42-da04851d66cb)
