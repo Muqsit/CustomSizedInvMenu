@@ -18,7 +18,7 @@ final class CustomSizedActorInvMenuGraphic implements InvMenuGraphic{
 	){}
 
 	public function send(Player $player, ?string $name) : void{
-		$this->inner->send($player, "§{$this->length}§r§r§r§r§r§r§r§r§r§r" . ($name ?? $this->name ?? "Inventory"));
+        	$this->inner->send($player, "§" . $this->length . "§1§r§r§r§r§r§r§r§r§r" . ($name ?? $this->name ?? "Inventory"));
 	}
 
 	public function sendInventory(Player $player, Inventory $inventory) : bool{
