@@ -11,14 +11,20 @@ use pocketmine\player\Player;
 
 final class CustomSizedActorInvMenuGraphic implements InvMenuGraphic{
 
+	readonly private string $size_data;
+
 	public function __construct(
 		readonly private InvMenuGraphic $inner,
 		readonly private ?string $name,
-		readonly private int $length
-	){}
+		readonly private int $length,
+		readonly private bool $scrollbar
+	){
+		$scroll = (int) $this->scrollbar;
+		$this->size_data = "§{$this->length}§{$scroll}§r§r§r§r§r§r§r§r§r§r";
+	}
 
 	public function send(Player $player, ?string $name) : void{
-		$this->inner->send($player, "§{$this->length}§r§r§r§r§r§r§r§r§r§r" . ($name ?? $this->name ?? "Inventory"));
+		$this->inner->send($player, $this->size_data . ($name ?? $this->name ?? "Inventory"));
 	}
 
 	public function sendInventory(Player $player, Inventory $inventory) : bool{

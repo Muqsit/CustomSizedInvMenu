@@ -26,14 +26,15 @@ final class CustomSizedInvMenuType implements InvMenuType{
 	public static function ofSize(int $size) : self{
 		$length = intdiv($size, 9) + ($size % 9 === 0 ? 0 : 1);
 		$length = min($length, 6);
-		return new self($size, $length);
+		return new self($size, $length, $length * 9 < $size);
 	}
 
 	readonly private ActorInvMenuGraphic $inner_graphic;
 
 	public function __construct(
 		readonly private int $size,
-		readonly private int $length
+		readonly private int $length,
+		readonly private bool $scrollbar
 	){
 		$actor_runtime_identifier = Entity::nextRuntimeId();
 
@@ -50,7 +51,7 @@ final class CustomSizedInvMenuType implements InvMenuType{
 	}
 
 	public function createGraphic(InvMenu $menu, Player $player) : ?InvMenuGraphic{
-		return new CustomSizedActorInvMenuGraphic($this->inner_graphic, $menu->getName(), $this->length);
+		return new CustomSizedActorInvMenuGraphic($this->inner_graphic, $menu->getName(), $this->length, $this->scrollbar);
 	}
 
 	public function createInventory() : Inventory{
