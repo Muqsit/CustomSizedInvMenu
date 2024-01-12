@@ -1,5 +1,5 @@
 # CustomSizedInvMenu
-To be able to build custom-sized `InvMenu` instances, you must install the [tedo0627/InventoryUIResourcePack](https://github.com/tedo0627/InventoryUIResourcePack) resource pack on your server.
+Now to be able to build custom-sized [`InvMenu`](https://github.com/muqsit/InvMenu) instances, you no longer need to install the [`tedo0627/InventoryUIResourcePack`](https://github.com/tedo0627/InventoryUIResourcePack) resource pack on your server as new version has it built into the plugin. However, you need to install the virion [`libBedrock`](https://github.com/NhanAZ/libBedrock) to your server so that errors do not occur during use 
 
 A custom-sized InvMenu provides several advantages over traditional ways of displaying menus (`InvMenu::TYPE_CHEST`, `InvMenu::TYPE_DOUBLE_CHEST`):
 1. **Dynamic:** To create a menu that can hold `n` items, you need not know the size of a chest or a double chest inventory. Instead, simply create a menu of the preferred size: `CustomSizedInvMenu::create(n)`.
@@ -25,8 +25,3 @@ Run `/cinvmenu <numSlots> [title]` to open an InvMenu of `numSlots` number of sl
 - `/cinvmenu 59 "59-slot Inventory"`
 
   ![image](https://github.com/Muqsit/CustomSizedInvMenu/assets/15074389/602e2fdc-b675-4b7f-9e2e-b76c700c64a3)
-
-
-### Resources
-- [tedo0627/InventoryUI](https://github.com/tedo0627/InventoryUI)
-- [tedo0627/InventoryUIResourcePack](https://github.com/tedo0627/InventoryUIResourcePack)
