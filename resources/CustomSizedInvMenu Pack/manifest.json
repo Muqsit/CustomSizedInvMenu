@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "CustomSizedInvMenu Resource Pack",
+        "description": "CustomSizedInvMenu Resource Pack",
+        "uuid": "7ca75eab-549d-45e4-b5b8-56d44209abf1",
+        "version": [1, 1, 0],
+        "min_engine_version": [1, 18, 0]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "description": "CustomSizedInvMenu Resource Pack",
+            "uuid": "dce102e8-6112-4190-a363-d6ee18bac0d2",
+            "version": [1, 1, 0]
+        }
+    ]
+}
