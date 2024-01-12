@@ -14,6 +14,9 @@ use pocketmine\network\mcpe\cache\StaticPacketCache;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
+
+use NhanAZ\libBedrock\ResourcePackManager;
+
 use RuntimeException;
 use function array_rand;
 use function assert;
@@ -21,7 +24,6 @@ use function is_numeric;
 
 final class CustomSizedInvMenu extends PluginBase{
 
-	private const RESOURCE_PACK_ID = "21f0427f-572a-416d-a90e-c5d9becb0fa3";
 	private const TYPE_DYNAMIC_PREFIX = "muqsit:customsizedinvmenu_";
 
 	public static function create(int $size) : InvMenu{
@@ -35,11 +37,8 @@ final class CustomSizedInvMenu extends PluginBase{
 	}
 
 	protected function onEnable() : void{
-		if($this->getServer()->getResourcePackManager()->getPackById(self::RESOURCE_PACK_ID) === null){
-			$this->getLogger()->warning("Resource pack 'Inventory UI Resource Pack' could not be found.");
-			$this->getLogger()->warning("This plugin cannot be loaded. Please download the resource pack from: https://github.com/tedo0627/InventoryUIResourcePack");
-			throw new RuntimeException("Resource pack 'Inventory UI Resource Pack' has not been loaded");
-		}
+    $this->saveDefaultConfig();
+		ResourcePackManager::registerResourcePack($this);
 
 		if(!InvMenuHandler::isRegistered()){
 			InvMenuHandler::register($this);
@@ -79,5 +78,9 @@ final class CustomSizedInvMenu extends PluginBase{
 
 		$menu->send($sender);
 		return true;
+	}
+	
+	protected function onDisable() : void{
+	  ResourcePackManager::unRegisterResourcePack($this);
 	}
 }
