@@ -14,10 +14,10 @@ final class CustomSizedActorInvMenuGraphic implements InvMenuGraphic{
 	private string $size_data;
 
 	public function __construct(
-		readonly private InvMenuGraphic $inner,
-		readonly private ?string $name,
-		readonly private int $length,
-		readonly private bool $scrollbar
+		private InvMenuGraphic $inner,
+		private ?string $name,
+		private int $length,
+		private bool $scrollbar
 	){
 		$scroll = (int) $this->scrollbar;
 		$this->size_data = "§{$this->length}§{$scroll}§r§r§r§r§r§r§r§r§r§r";
