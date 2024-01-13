@@ -11,7 +11,7 @@ use pocketmine\player\Player;
 
 final class CustomSizedActorInvMenuGraphic implements InvMenuGraphic{
 
-	readonly private string $size_data;
+	private string $size_data;
 
 	public function __construct(
 		readonly private InvMenuGraphic $inner,
