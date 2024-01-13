@@ -29,7 +29,7 @@ final class CustomSizedInvMenuType implements InvMenuType{
 		return new self($size, $length, $length * 9 < $size);
 	}
 
-	readonly private ActorInvMenuGraphic $inner_graphic;
+	private ActorInvMenuGraphic $inner_graphic;
 
 	public function __construct(
 		readonly private int $size,
