@@ -32,9 +32,9 @@ final class CustomSizedInvMenuType implements InvMenuType{
 	private ActorInvMenuGraphic $inner_graphic;
 
 	public function __construct(
-		readonly private int $size,
-		readonly private int $length,
-		readonly private bool $scrollbar
+		private int $size,
+		private int $length,
+		private bool $scrollbar
 	){
 		$actor_runtime_identifier = Entity::nextRuntimeId();
 
